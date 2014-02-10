@@ -1,8 +1,6 @@
 var express = require("express");
 var logfmt = require("logfmt");
 var app = express();
-var pg = require('pg');
-var mongo = require('mongodb');
 var wechat = require('wechat');
 
 app.use(logfmt.requestLogger());
@@ -12,28 +10,9 @@ app.get('/', function(req, res) {
 });
 
 
-var port = Number(80);
+var port = Number(process.env.PORT || 3000);
 app.listen(port, function() {
   console.log("Listening on " + port);
-});
-
-pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-  client.query('SELECT * FROM your_table', function(err, result) {
-    done();
-    if(err) return console.error(err);
-    console.log(result.rows);
-  });
-});
-
-var mongoUri = process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
-  'mongodb://localhost/mydb';
-
-mongo.Db.connect(mongoUri, function (err, db) {
-  db.collection('mydocs', function(er, collection) {
-    collection.insert({'mykey': 'myvalue'}, {safe: true}, function(er,rs) {
-    });
-  });
 });
 
 app.use(express.query());
