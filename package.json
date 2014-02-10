@@ -1,0 +1,19 @@
+{
+  "name": "wiz-wechat-test",
+  "version": "0.0.0",
+  "description": "test for wiz wechat program",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@heroku.com:wiz-wechat-test.git"
+  },
+  "author": "Sloan Lee",
+  "license": "MIT",
+  "dependencies": {
+    "express": "~3.4.8",
+    "logfmt": "~0.20.0"
+  }
+}
