@@ -15,6 +15,7 @@
   "dependencies": {
     "express": "~3.4.8",
     "logfmt": "~0.20.0",
-    "wechat": "~0.6.5"
+    "wechat": "~0.6.5",
+    "nodemon": "~1.0.14"
   }
 }
